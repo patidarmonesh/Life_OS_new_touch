@@ -1,0 +1,20 @@
+.area-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:clamp(16px,3vw,24px);min-width:0}
+.area-card h2{font-size:1.125rem;margin:0 0 12px}.area-card p{line-height:1.6}.muted{color:var(--text-secondary)}
+.area-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px}
+.area-toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:12px}.area-toolbar>*{max-width:100%}
+.area-form{display:grid;gap:16px}.area-form label{display:grid;gap:6px;font-size:.875rem}.area-form input,.area-form select,.area-form textarea,.area-toolbar input,.area-toolbar select{min-width:0;max-width:100%;padding:12px;border:1px solid var(--border);border-radius:8px;background:var(--bg-secondary);color:var(--text-primary);font:inherit;font-size:1rem;min-height:44px}
+.area-form input[type=checkbox]{width:24px;min-height:24px}.area-form .check-label{display:flex;align-items:center;gap:10px}
+.area-form button{justify-self:start}.area-list{display:grid;gap:12px;list-style:none;padding:0;margin:0}.area-list li{padding:14px 0;border-bottom:1px solid var(--border);overflow-wrap:anywhere}.area-list h3{margin:0;font-size:1rem}.area-list p{margin:6px 0}
+.data-table{width:100%;border-collapse:collapse;font-size:.875rem}.data-table th,.data-table td{text-align:left;padding:12px;border-bottom:1px solid var(--border)}.table-scroll{overflow:auto;max-width:100%}
+.chart-frame{height:240px;min-width:0;margin:16px 0}.area-card details{margin-top:16px}.area-card summary{cursor:pointer;min-height:44px;padding-top:12px}
+.metric-card{min-width:0;overflow-wrap:anywhere}.metric-card strong{font-variant-numeric:tabular-nums}.notice-error{border-left:4px solid #e16b6b}.notice-warning{border-left:4px solid #dba654}
+.area-list button{min-height:44px}.area-card textarea{resize:vertical}.area-eyebrow{font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-secondary)}
+@media(max-width:600px){.chart-frame{height:220px}.area-card{padding:16px}.area-toolbar label{width:100%}}
+/* Readable retained-area content and chart axes in both themes. */
+.legacy-area{min-width:0;width:100%}.legacy-area div{min-width:0}.legacy-area button{height:auto!important}
+.recharts-cartesian-axis-tick-value{fill:var(--text-secondary)!important;font-size:.875rem}
+.metric-card>strong{font-size:1.75rem;line-height:1.25;letter-spacing:-.02em}
+@media(max-width:600px){h1{font-size:1.5rem!important}.life-content>div:not(.page-stack)>div{padding-left:0!important;padding-right:0!important}.life-content [style*="font-size: 9px"],.life-content [style*="font-size: 10px"],.life-content [style*="font-size: 11px"]{font-size:.75rem!important}}
+@media(max-width:600px){.legacy-area{overflow-wrap:anywhere}.legacy-area [style*="grid-template-columns"]{grid-template-columns:minmax(0,1fr)!important}.legacy-area [style*="display: flex"]{min-width:0}.legacy-area [style*="flex-direction: row"]{flex-wrap:wrap}.legacy-area [style*="font-family"]{font-family:var(--font-sans)!important}.legacy-area input,.legacy-area select,.legacy-area textarea{min-width:0}}
+.area-link>div{min-width:0;overflow-wrap:anywhere}
+@media(max-width:600px){.metric-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,10rem),1fr))}}

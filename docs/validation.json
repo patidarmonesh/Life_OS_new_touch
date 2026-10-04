@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-04",
+  "lint": {"status": "passed", "errors": 0, "warnings": 0},
+  "domainAndBackend": {"command": "npm test", "passed": 98, "failed": 0},
+  "productionBuild": {"command": "npm run build", "status": "passed", "includesServiceWorker": true},
+  "browser": {
+    "engine": "Playwright Chromium",
+    "status": "passed across final targeted runs",
+    "tests": 11,
+    "groups": {"accountTabs": 2, "dailyExecution": 3, "meditation": 1, "recoveryAndReflow": 3, "routesAndPersistence": 2},
+    "retainedRoutes": 22,
+    "coreViewportWidths": [320,360,390,430,768,1024,1366,1920],
+    "themes": ["light", "dark"],
+    "enlargedText": "200% at 320px on core routes",
+    "note": "One enlarged-text overflow was corrected and the recovery/workflows group reran 5/5 successfully. Not a real iPhone/Android or closed-app push test."
+  },
+  "indexedDbOwnerBoundary": "passed isolated browser fixture",
+  "productionDependencyAudit": {"vulnerabilities": 0},
+  "allDependencyAudit": {"high": 5, "scope": "Tailwind 3 development glob dependencies", "status": "documented unresolved"},
+  "secretScan": "Known credential patterns: zero matches; heuristic only",
+  "externalProviderVerification": "Unconfigured/unverified; see INTEGRATIONS.md and DELIVERY.md"
+}

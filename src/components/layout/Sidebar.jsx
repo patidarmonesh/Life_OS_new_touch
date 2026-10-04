@@ -1,0 +1,11 @@
+import { NavLink, Link, useNavigate } from 'react-router-dom'
+import { Sun, CalendarDays, ChartNoAxesCombined, UserRound, Plus, ArrowUpRight, Wallet, BookOpen, Heart, MessageCircle, Circle } from 'lucide-react'
+import { useAppState } from '../../context/appHooks'
+const primary = [{ to: '/', label: 'Today', icon: Sun }, { to: '/plan', label: 'Plan', icon: CalendarDays }, { to: '/insights', label: 'Insights', icon: ChartNoAxesCombined }, { to: '/me', label: 'Me', icon: UserRound }]
+export default function Sidebar() {
+  const state = useAppState(), navigate = useNavigate()
+  const pending = (state.captures?.items || []).filter(c => c.status !== 'confirmed' && c.status !== 'archived').length
+  const quickArea = state.settings?.preferences?.quickArea || '/finance'
+  const quickLabel = { '/finance': 'Money', '/study': 'Study', '/health': 'Health & sleep', '/journal': 'Journal', '/habits': 'Routines', '/goals': 'Goals', '/timeflow': 'Actual timeline', '/brain': 'Notes' }[quickArea] || 'Money'
+  return <aside className="life-sidebar"><Link to="/" className="life-brand"><span className="brand-mark"><Circle size={18}/></span>LifeOS<span className="brand-caption">a little more intentional</span></Link><nav aria-label="Main navigation" className="sidebar-nav">{primary.map(({ to, label, icon: Icon }) => <NavLink key={to} to={to} end={to === '/'} className={({ isActive }) => `sidebar-link ${isActive ? 'active' : ''}`}><Icon size={20}/>{label}</NavLink>)}</nav><button className="button button-primary sidebar-capture" onClick={() => navigate('/capture')}><Plus size={20}/>Capture{pending > 0 && <span className="count-badge">{pending}</span>}</button><div className="sidebar-section"><p className="eyebrow">YOUR AREAS</p><Link to={quickArea}><ArrowUpRight size={17}/>{quickLabel} · shortcut</Link><Link to="/finance"><Wallet size={17}/>Money</Link><Link to="/study"><BookOpen size={17}/>Study</Link><Link to="/health"><Heart size={17}/>Health & sleep</Link><Link to="/me"><ArrowUpRight size={17}/>All areas</Link></div><div className="sidebar-bottom"><Link to="/ai" className="sidebar-link"><MessageCircle size={20}/>Ask LifeOS</Link><p>Make room for what matters.<br/>Record what really happened.</p></div></aside>
+}

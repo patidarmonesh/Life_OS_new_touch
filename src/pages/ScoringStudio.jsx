@@ -1,0 +1,2 @@
+import { Link } from 'react-router-dom'
+export default function ScoringStudio() { return <div className="page-stack"><h1>Goals & measurements</h1><section className="area-card"><p>LifeOS uses separate study attainment, routine completion, observed time coverage and plan outcomes. An opaque personal score is not calculated.</p><div className="area-toolbar"><Link to="/settings">Configure goals</Link><Link to="/analytics">View the evidence</Link></div></section></div> }

@@ -1,0 +1,81 @@
+{
+  "reportVersion": 1,
+  "metricVersion": "lifeos-metrics/2.0.0",
+  "measuredAt": "2026-10-04T02:36:31.747Z",
+  "method": "Fixed synthetic fixture; daily, selected-week, and calendar-year selectors measured once in this order using performance.now(). No warm-up or strict speed assertion. Fixture construction and output writing excluded.",
+  "fixture": {
+    "seed": "deterministic-index-formulas-v1",
+    "timezone": "Asia/Kolkata",
+    "observationClock": "2026-10-04T12:00:00+05:30",
+    "sourceRange": {
+      "startDate": "2023-10-04",
+      "endDate": "2026-10-03"
+    },
+    "sourceDays": 1096,
+    "activities": 5000,
+    "transactions": 1000
+  },
+  "machine": {
+    "node": "v24.16.0",
+    "v8": "13.6.233.17-node.49",
+    "platform": "win32",
+    "release": "10.0.26200",
+    "architecture": "x64",
+    "cpuModel": "Intel(R) Core(TM) i5-1035G1 CPU @ 1.00GHz",
+    "logicalCpuCount": 8,
+    "totalMemoryGiB": 7.78
+  },
+  "measurements": [
+    {
+      "selector": "daily",
+      "range": {
+        "startDate": "2026-10-03",
+        "endDate": "2026-10-03"
+      },
+      "invocations": 1,
+      "durationMs": 130.67,
+      "resultCheck": {
+        "dayCount": 1,
+        "loggedMinutes": 580,
+        "studyMinutes": 67,
+        "spendMinor": null
+      }
+    },
+    {
+      "selector": "selected-week",
+      "range": {
+        "startDate": "2026-09-27",
+        "endDate": "2026-10-03"
+      },
+      "invocations": 1,
+      "durationMs": 137.1,
+      "resultCheck": {
+        "dayCount": 7,
+        "loggedMinutes": 4209,
+        "studyMinutes": 417,
+        "spendMinor": 577701
+      }
+    },
+    {
+      "selector": "calendar-year",
+      "range": {
+        "startDate": "2026-01-01",
+        "endDate": "2026-12-31"
+      },
+      "invocations": 1,
+      "durationMs": 1530.99,
+      "resultCheck": {
+        "dayCount": 365,
+        "loggedMinutes": 165711,
+        "studyMinutes": 16587,
+        "spendMinor": 20377706
+      }
+    }
+  ],
+  "limitations": [
+    "One desktop run with synthetic data, not a real-phone measurement.",
+    "Single samples include runtime scheduling and JIT effects; this does not establish percentiles, throughput or a performance guarantee.",
+    "The calendar-year query includes future days after the fixed observation clock; actual observations stay clipped.",
+    "Record counts do not model network, database, React rendering or browser storage performance."
+  ]
+}
